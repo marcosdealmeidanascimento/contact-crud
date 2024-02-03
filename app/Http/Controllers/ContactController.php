@@ -17,7 +17,7 @@ class ContactController extends Controller
     public function show(string $id, Contact $contact)
     {
         if (!$contact = $contact->find($id)) {
-            return back();
+            return redirect()->route('contact.index');
         }
 
         return view('contact.show', compact('contact'));
@@ -38,7 +38,7 @@ class ContactController extends Controller
     public function edit(string $id, Contact $contact)
     {
         if (!$contact = $contact->find($id)) {
-            return back();
+            return redirect()->route('contact.index');
         }
 
         return view('contact.edit', compact('contact'));

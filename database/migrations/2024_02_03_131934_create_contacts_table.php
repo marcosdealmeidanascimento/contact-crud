@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->min(5);
             $table->string('email')->unique();
-            $table->string('contact')->min(9);
+            $table->string('contact')->min(9)->max(9)->unique();
             $table->softDeletes();
             $table->timestamps();
         });
