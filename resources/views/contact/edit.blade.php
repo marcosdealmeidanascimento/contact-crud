@@ -1,8 +1,8 @@
 <div class="teal-form">
     <h1>Edit Contact</h1>
-    <form action="{{ route('contact.store') }}" method="POST">
+    <form action="{{ route('contact.update', $contact->id) }}" method="POST">
         @csrf
-        @method('PUT')
+        @method('Put')
 
         <div class="form-group">
             <label for="name">Name:</label>
