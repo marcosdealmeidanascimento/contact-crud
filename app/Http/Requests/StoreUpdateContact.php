@@ -39,6 +39,20 @@ class StoreUpdateContact extends FormRequest
             ],
         ];
 
+        if ($this->method() == 'PUT') {
+            $rules['email'] = [
+                'required',
+                'email',
+                'unique:contacts,email,' . $this->segment(2) . ',id',
+            ];
+            $rules['contact'] = [
+                'required',
+                'min:9',
+                'max:9',
+                'unique:contacts,contact,' . $this->segment(2) . ',id',
+            ];
+        }
+
         return $rules;
     }
 }
