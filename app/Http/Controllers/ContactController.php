@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+
+    public function home(Contact $contact)
+    {
+        return view('contact.index', compact('contacts'));
+    }
+
     public function index(Contact $contact)
     {
         $contacts = $contact->all();

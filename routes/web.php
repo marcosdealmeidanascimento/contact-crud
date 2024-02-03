@@ -21,3 +21,4 @@ Route::put('/contact/{id}', [ContactController::class, 'update'])->name('contact
 Route::get('/contact/{id}', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact/create', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/', [ContactController::class, 'index'])->name('home');
